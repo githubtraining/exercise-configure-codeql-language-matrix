@@ -15,8 +15,6 @@ jobs:
       - name: Grade configure-codeql-language-matrix activity
         id: events
         uses: ./.github/actions/local-action
-        with:
-          github-token: ${{secrets.GITHUB_TOKEN}}
 
       - name: Grading results
         uses: githubtraining/looking-glass-action@v1.0.0

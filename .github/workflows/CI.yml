@@ -1,4 +1,4 @@
-name: CI for local local-action
+name: CI for local-action
 on:
   push:
     branches-ignore:
