@@ -1,14 +1,19 @@
-const github = require("@actions/github");
-const core = require("@actions/core");
+const yaml = require("js-yaml");
+const fs = require("fs");
+const hasValidLanguageMatrix = require("./validateLanguageMatrix");
 
 module.exports = async () => {
-  const token = core.getInput("token");
-  const octokit = github.getOctokit(token);
-
   try {
     //   Do some logic to verify the leaner understands
 
-    if (GOOD - RESULT) {
+    const codeQLWorkflowFile = fs.readFileSync(
+      `${process.env.GITHUB_WORKSPACE}/.github/workflows/codeQL.yml`,
+      "utf8"
+    );
+    const parsedCodeQLWorkflow = yaml.safeLoad(codeQLWorkflowFile);
+    const languageMatrixStatus = hasValidLanguageMatrix(parsedCodeQLWorkflow);
+
+    if (languageMatrixStatus.isValid) {
       return {
         reports: [
           {
@@ -35,8 +40,9 @@ module.exports = async () => {
             level: "warning",
             msg: `incorrect solution`,
             error: {
-              expected: "What we expecrted",
-              got: `What we got`,
+              expected:
+                "Strategy matrix for CodeQL-Build job to contain one or more languages",
+              got: `${languageMatrixStatus.message}`,
             },
           },
         ],
@@ -53,7 +59,7 @@ module.exports = async () => {
           msg: "",
           error: {
             expected: "",
-            got: "An internal error occurred.  Please open an issue at: https://github.com/githubtraining/exercise-remove-commit-history and let us know!  Thank you",
+            got: "An internal error occurred.  Please open an issue at: https://github.com/githubtraining/exercise-configure-codeql-language-matrix and let us know!  Thank you",
           },
         },
       ],
