@@ -303,7 +303,7 @@ module.exports = async () => {
       `${process.env.GITHUB_WORKSPACE}/.github/workflows/codeQL.yml`,
       "utf8"
     );
-    const parsedCodeQLWorkflow = yaml.safeLoad(codeQLWorkflowFile);
+    const parsedCodeQLWorkflow = yaml.load(codeQLWorkflowFile);
     const languageMatrixStatus = hasValidLanguageMatrix(parsedCodeQLWorkflow);
 
     if (languageMatrixStatus.isValid) {
@@ -345,7 +345,7 @@ module.exports = async () => {
     return {
       reports: [
         {
-          filename: filename,
+          filename: "",
           isCorrect: false,
           display_type: "actions",
           level: "fatal",

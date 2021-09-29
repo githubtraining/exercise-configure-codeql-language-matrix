@@ -52,7 +52,7 @@ module.exports = async () => {
     return {
       reports: [
         {
-          filename: filename,
+          filename: "",
           isCorrect: false,
           display_type: "actions",
           level: "fatal",
