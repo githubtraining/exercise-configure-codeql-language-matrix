@@ -1,6 +1,6 @@
-# Welcome to the configure-codeql-language-matrix exercise!
+# Welcome to the Configure a CodeQL language matrix exercise!
 
-This exercise checks FILL THIS IN. It is automatically graded via a workflow once you have completed the instructions.
+This exercise checks your knowledge on configuring a CodeQL language matrix. It is automatically graded via a workflow once you have completed the instructions.
 
 ## About this exercise
 
@@ -10,7 +10,7 @@ A grading script exists under `.github/workflows/grading.yml`. You do not need t
 
 <!-- REQUIRED for all exercises -->
 <details><summary>:information_source: About the use of GitHub Actions in this exercise</summary>
- 
+
 > This exercise utilizes [GitHub Actions](https://docs.github.com/en/actions), which is free for public repositories and self-hosted runners, but may incur charges on private repositories. See [About billing for GitHub Actions](https://docs.github.com/en/billing/managing-billing-for-github-actions/about-billing-for-github-actions) to learn more. The use of GitHub Actions also means that it may take the grading workflow a few seconds and sometimes minutes to run.
 </details>
 
@@ -31,33 +31,31 @@ A grading script exists under `.github/workflows/grading.yml`. You do not need t
 
 ## Instructions
 
-<!-- Specific instructions for your exercise -->
-
 Please complete the instructions below:
 
 1. Create your own copy of this repository by using the [Use this template](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/creating-a-repository-from-a-template#creating-a-repository-from-a-template) button.
 
-<!-- Add your steps below starting with step 2 -->
-
-**Configure the `codeQL.yml` workflow to use a language matrix in the `CodeQL-Build` job**
-**This is a job level configuration, so do not pass and inputs `with` in a `steps` block**
+2. Add a `language` matrix in the `codeQL.yml` workflow file. Feel free to input any language in the matrix.
 
 ## Useful resources
 
-Use these resources specific to this exercise to help you!
+Use these to help you!
 
-<!-- - Add further resources for the learner in list form:
-- [Title](link)
- -->
+Resources specific to this exercise:
+
+- [Configuring code scanning](https://docs.github.com/en/code-security/code-scanning/automatically-scanning-your-code-for-vulnerabilities-and-errors/configuring-code-scanning)
+
+Resources for working with exercises and GitHub Actions in general:
+
+- [Creating a repository from a template]( https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/creating-a-repository-from-a-template)
+- [Viewing workflow run history](https://docs.github.com/en/actions/managing-workflow-runs/viewing-workflow-run-history)
+- [Running a workflow on GitHub](https://docs.github.com/en/actions/managing-workflow-runs/manually-running-a-workflow#running-a-workflow-on-github)
+- [About billing for GitHub Actions](https://docs.github.com/en/github/setting-up-and-managing-billing-and-payments-on-github/about-billing-for-github-actions)
+- [GitHub Actions](https://docs.github.com/en/actions)
 
 ## Seeing your result
 
-Your exercise is graded automatically once you have completed the instructions. To see the result of your exercise, go to the **Actions** tab, and see the most recent run on the **Grading** workflow. <!-- specify expected Looking Glass display_type --><!-- specific place to look -->
-
-<!-- Display types:
-- actions
-- issues
- -->
+Your exercise is graded automatically once you have completed the instructions. To see the result of your exercise, go to the **Actions** tab, and see the most recent run on the **Grading** workflow.
 
 See [Viewing workflow run history](https://docs.github.com/en/actions/monitoring-and-troubleshooting-workflows/viewing-workflow-run-history) if you need assistance.
 
